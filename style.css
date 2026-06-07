@@ -149,10 +149,12 @@ body {
 /* ── Container ── */
 .container {
   max-width: 430px;
+  width: 100%;
   margin: 0 auto;
   padding: 28px 16px 100px;
   position: relative;
   z-index: 1;
+  box-sizing: border-box;
 }
 
 /* ── Header ── */
@@ -326,7 +328,9 @@ h1 {
 .sign-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 8px;
+  padding: 0 12px;
+  overflow: hidden;
 }
 
 .sign-btn {
@@ -657,10 +661,33 @@ h1 {
   padding: 0 20px 36px;
 }
 
-/* ── Responsive ── */
-@media (max-width: 420px) {
-  .sign-grid { grid-template-columns: repeat(3, 1fr); }
-  h1 { font-size: 1.35rem; }
+/* ── Responsive (スマホ最優先) ── */
+@media (max-width: 430px) {
+  /* コンテナの上下余白を大幅圧縮 */
+  .container { padding: 10px 16px 30px; }
+
+  /* ヘッダーを最小化 */
+  header { margin-bottom: 8px; padding-bottom: 8px; }
+  h1 { font-size: 1.1rem; letter-spacing: 0.06em; }
+  .date { margin-top: 3px; font-size: 0.7rem; }
+
+  /* ラベルの余白を最小化 */
+  .label { font-size: 0.72rem; margin-bottom: 4px; letter-spacing: 0.06em; }
+
+  /* PWAインストールバナーは常に非表示 */
+  .install-banner { display: none !important; }
+
+  /* 星座グリッド：3列に変更 */
+  .sign-grid { grid-template-columns: repeat(3, 1fr); width: 100%; }
+
+  /* グリッドボタン画像：正方形クロップで縦を詰める */
+  .sign-btn-img { aspect-ratio: 1 / 1; }
+  .sign-btn { border-radius: 10px; }
+  .sign-btn .btn-name { font-size: 12px; padding: 4px 2px 5px; }
+  .btn-zodiac-icon { width: 12px; height: 12px; }
+  .btn-zodiac-icon svg { width: 12px; height: 12px; }
+
+  /* 占い結果ページ（変更最小限） */
   .nav-btn { padding: 10px 18px; font-size: 0.82rem; }
   .fortune-title { font-size: 1rem; }
   .fortune-img-area { padding: 6px 10px 0; }
