@@ -173,7 +173,7 @@ h1 {
   font-size: 1.65rem;
   font-weight: 700;
   color: #9d2b54;
-  text-shadow: 0 1px 1px rgba(157,43,84,0.15);
+  text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 3px rgba(255,255,255,0.5);
   letter-spacing: 0.12em;
 }
 
@@ -183,6 +183,7 @@ h1 {
   font-weight: 600;
   color: #5e1a35;
   letter-spacing: 0.08em;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 3px rgba(255,255,255,0.5);
 }
 
 /* ── Page transitions ── */
@@ -212,6 +213,7 @@ h1 {
   font-size: 0.77rem;
   color: var(--rose);
   letter-spacing: 0.03em;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 3px rgba(255,255,255,0.5);
 }
 
 .install-btn {
@@ -328,6 +330,7 @@ h1 {
   margin-bottom: 20px;
   letter-spacing: 0.12em;
   opacity: 1;
+  text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 3px rgba(255,255,255,0.5);
 }
 
 /* ── Sign Grid ── */

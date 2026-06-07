@@ -398,7 +398,9 @@ function assignTopPageImages() {
     const j = Math.floor(Math.random() * (i + 1));
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
-  _topPageImgEls.forEach((el, i) => { el.src = pool[i % pool.length]; });
+  _topPageImgEls.forEach((el, i) => {
+    if (!el.dataset.fallback) { el.src = pool[i % pool.length]; }
+  });
 }
 
 // ── セッション画像（重複なし4枚割り当て）──
