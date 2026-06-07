@@ -615,18 +615,16 @@ SIGNS.forEach((sign, i) => {
   img.alt = sign.name;
   img.onerror = function() {
     if (!this.dataset.retried) {
-      // 1回だけリトライ
+      // 1回だけリトライ（キャッシュ回避）
       this.dataset.retried = '1';
       const src = this.src;
       this.src = '';
       setTimeout(() => { this.src = src + '?r=1'; }, 1500);
-    } else {
-      // フォールバック：ローズ背景＋星座名
-      this.style.display = 'none';
-      wrap.style.background = 'linear-gradient(135deg, #c4607c, #944862)';
-      wrap.style.display = 'flex';
-      wrap.style.alignItems = 'center';
-      wrap.style.justifyContent = 'center';
+    } else if (!this.dataset.fallback) {
+      // リトライ後も失敗: ローカルフォールバック画像に差し替え
+      this.dataset.fallback = '1';
+      this.onerror = null;
+      this.src = `./images/fallback${(i % 2) + 1}.jpg`;
     }
   };
   _topPageImgEls.push(img);
