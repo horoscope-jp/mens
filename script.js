@@ -613,6 +613,22 @@ SIGNS.forEach((sign, i) => {
   const img = document.createElement('img');
   img.className = 'sign-btn-img';
   img.alt = sign.name;
+  img.onerror = function() {
+    if (!this.dataset.retried) {
+      // 1回だけリトライ
+      this.dataset.retried = '1';
+      const src = this.src;
+      this.src = '';
+      setTimeout(() => { this.src = src + '?r=1'; }, 1500);
+    } else {
+      // フォールバック：ローズ背景＋星座名
+      this.style.display = 'none';
+      wrap.style.background = 'linear-gradient(135deg, #c4607c, #944862)';
+      wrap.style.display = 'flex';
+      wrap.style.alignItems = 'center';
+      wrap.style.justifyContent = 'center';
+    }
+  };
   _topPageImgEls.push(img);
   const nameSpan = document.createElement('span');
   nameSpan.className = 'btn-name';
@@ -624,6 +640,16 @@ SIGNS.forEach((sign, i) => {
   grid.appendChild(btn);
 });
 assignTopPageImages();
+
+// 次回表示用にプリロード（キャッシュ促進）
+(function preloadTopImages() {
+  const pool = [...TOP_PAGE_IMAGES];
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [pool[i], pool[j]] = [pool[j], pool[i]];
+  }
+  pool.slice(0, 24).forEach(url => { new Image().src = url; });
+})();
 
 // ナビゲーション
 document.getElementById('overall-back').addEventListener('click', () => showPage('page-top'));
