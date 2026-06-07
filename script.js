@@ -391,6 +391,7 @@ const PAGE_BEAUTY_IMG = {
 
 // ── トップページ画像（重複なし12枚割り当て）──
 let _topPageImgEls = [];
+const fallbackLocked = new Set();
 
 function assignTopPageImages() {
   const pool = [...TOP_PAGE_IMAGES];
@@ -399,7 +400,7 @@ function assignTopPageImages() {
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
   _topPageImgEls.forEach((el, i) => {
-    if (!el.dataset.fallback) { el.src = pool[i % pool.length]; }
+    if (!fallbackLocked.has(i)) { el.src = pool[i % pool.length]; }
   });
 }
 
@@ -623,9 +624,11 @@ SIGNS.forEach((sign, i) => {
       this.src = '';
       setTimeout(() => { this.src = src + '?r=1'; }, 1500);
     } else if (!this.dataset.fallback) {
-      // リトライ後も失敗: ローカルフォールバック画像に差し替え
+      // リトライ後も失敗: ローカルフォールバック画像に差し替え（上書き不可ロック）
       this.dataset.fallback = '1';
       this.onerror = null;
+      fallbackLocked.add(i);
+      console.log('Fallback locked for index:', i);
       this.src = `./images/fallback${(i % 2) + 1}.jpg`;
     }
   };
