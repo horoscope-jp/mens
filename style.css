@@ -296,7 +296,7 @@ h1 {
 
 /* ── Sign Selector Label ── */
 .label {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #7a2f4a;
   text-align: center;
@@ -308,9 +308,10 @@ h1 {
 /* ── Sign Grid ── */
 .sign-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
   width: 100%;
+  padding: 0 12px;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -357,7 +358,7 @@ h1 {
 .sign-btn-img-wrap {
   position: relative;
   width: 100%;
-  aspect-ratio: 9 / 10;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 14px;
   padding: 0;
@@ -370,6 +371,7 @@ h1 {
   inset: 0;
   width: 100%;
   height: 100%;
+  max-width: 100%;
   object-fit: cover;
   object-position: center 25%;
   display: block;
@@ -666,7 +668,7 @@ h1 {
   .install-banner { display: none !important; }
 
   /* 星座グリッド：3列、縦長カード */
-  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0; gap: 6px; margin-bottom: 8px; }
+  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0 12px; gap: 6px; margin-bottom: 8px; }
   .sign-btn-img-wrap { aspect-ratio: 4 / 5; border-radius: 12px; }
   .sign-btn { border-radius: 12px; }
   .sign-btn .btn-name { font-size: 16px; padding: 6px 4px 7px; }
