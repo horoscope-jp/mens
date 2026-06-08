@@ -442,7 +442,7 @@ h1 {
   color: #9d2b54;
   text-align: center;
   letter-spacing: 0.14em;
-  font-weight: 700;
+  font-weight: 800;
   padding: 12px 0 0;
   margin-bottom: 12px;
 }
@@ -468,7 +468,7 @@ h1 {
   font-size: 0.72rem;
   color: rgba(255,255,255,0.96);
   letter-spacing: 0.05em;
-  font-weight: 500;
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -498,7 +498,7 @@ h1 {
 
 .lucky-overlay-badge {
   font-size: 0.72rem;
-  font-weight: 600;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.04em;
 }
@@ -518,7 +518,7 @@ h1 {
 
 .fortune-title {
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 800;
   color: #7a2545;
   letter-spacing: 0.08em;
 }
@@ -535,7 +535,7 @@ h1 {
 
 .fortune-content .stars {
   font-size: 1.2rem;
-  font-weight: 600;
+  font-weight: 700;
   text-align: center;
   flex-shrink: 0;
   letter-spacing: 3px;
@@ -559,7 +559,7 @@ h1 {
   flex: 1;
   overflow: hidden;
   color: #6b3048;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.03em;
   -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
@@ -601,7 +601,7 @@ h1 {
 .nav-btn {
   font-family: inherit;
   font-size: 0.87rem;
-  font-weight: 700;
+  font-weight: 800;
   padding: 6px 22px;
   border-radius: 50px;
   cursor: pointer;
@@ -679,7 +679,7 @@ h1 {
   .fortune-page { padding-top: 0; }
   .fortune-img-area { padding: 6px 14px 0; }
   .fortune-page-heading { font-size: 1rem; padding: 8px 0 0; margin-bottom: 8px; }
-  .fortune-img-frame { aspect-ratio: 3 / 4; width: 80%; margin: 0 auto; max-height: 50vh; }
+  .fortune-img-frame { aspect-ratio: 3 / 4; width: 90%; margin: 0 auto; max-height: 50vh; }
   .fortune-title-below { padding: 6px 12px 0; }
   .fortune-title { font-size: 1rem; }
   .fortune-content { padding: 6px 20px 4px; gap: 6px; }
