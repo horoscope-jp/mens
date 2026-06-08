@@ -27,29 +27,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ── Cherry Blossom Background ── */
-#stars-bg {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.cherry-blossom {
-  position: absolute;
-  pointer-events: none;
-  opacity: 0.35;
-  animation: floatBlossom ease-in-out infinite;
-  user-select: none;
-}
-
-@keyframes floatBlossom {
-  0%, 100% { transform: translateY(0) rotate(-5deg);   opacity: 0.35; }
-  33%       { transform: translateY(-18px) rotate(6deg); opacity: 0.28; }
-  66%       { transform: translateY(-8px) rotate(-9deg); opacity: 0.38; }
-}
-
 /* ── Auth Screen ── */
 .auth-screen {
   position: fixed;
@@ -83,7 +60,6 @@ body {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--rose);
-  text-shadow: 0 0 20px rgba(184,80,112,0.25);
   margin-bottom: 10px;
   letter-spacing: 0.1em;
 }
@@ -173,7 +149,6 @@ h1 {
   font-size: 1.65rem;
   font-weight: 700;
   color: #9d2b54;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.9), -1px -1px 2px rgba(255,255,255,0.9), 1px -1px 2px rgba(255,255,255,0.9), -1px 1px 2px rgba(255,255,255,0.9);
   letter-spacing: 0.12em;
 }
 
@@ -183,7 +158,6 @@ h1 {
   font-weight: 600;
   color: #5e1a35;
   letter-spacing: 0.08em;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.9), -1px -1px 2px rgba(255,255,255,0.9), 1px -1px 2px rgba(255,255,255,0.9), -1px 1px 2px rgba(255,255,255,0.9);
 }
 
 /* ── Page transitions ── */
@@ -213,7 +187,6 @@ h1 {
   font-size: 0.77rem;
   color: var(--rose);
   letter-spacing: 0.03em;
-  text-shadow: 0 0 8px rgba(255,255,255,0.7), 0 0 3px rgba(255,255,255,0.5);
 }
 
 .install-btn {
@@ -321,8 +294,6 @@ h1 {
 .step-body strong { color: var(--rose); }
 .step-sub { font-size: 0.74rem; color: var(--text-sub); }
 
-.deco-symbol { text-shadow: none; }
-
 /* ── Sign Selector Label ── */
 .label {
   font-size: 0.85rem;
@@ -332,7 +303,6 @@ h1 {
   margin-bottom: 20px;
   letter-spacing: 0.12em;
   opacity: 1;
-  text-shadow: 1px 1px 2px rgba(255,255,255,0.9), -1px -1px 2px rgba(255,255,255,0.9), 1px -1px 2px rgba(255,255,255,0.9), -1px 1px 2px rgba(255,255,255,0.9);
 }
 
 /* ── Sign Grid ── */
@@ -416,7 +386,6 @@ h1 {
   letter-spacing: 0.06em;
   text-align: center;
   padding: 6px 4px 7px;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.7);
   z-index: 2;
   display: flex;
   align-items: center;
@@ -471,10 +440,9 @@ h1 {
   color: #9d2b54;
   text-align: center;
   letter-spacing: 0.14em;
-  font-weight: 500;
+  font-weight: 700;
   padding: 12px 0 0;
   margin-bottom: 12px;
-  text-shadow: 0 0 16px rgba(157,43,84,0.18);
 }
 
 .sign-overlay-top {
@@ -500,7 +468,6 @@ h1 {
   letter-spacing: 0.05em;
   font-weight: 500;
   white-space: nowrap;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.95), 0 0 8px rgba(0,0,0,0.8);
 }
 
 .fortune-img-frame {
@@ -529,9 +496,9 @@ h1 {
 
 .lucky-overlay-badge {
   font-size: 0.72rem;
+  font-weight: 600;
   color: #ffffff;
   letter-spacing: 0.04em;
-  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
 }
 
 .fortune-img {
@@ -549,10 +516,9 @@ h1 {
 
 .fortune-title {
   font-size: 1.05rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #7a2545;
   letter-spacing: 0.08em;
-  text-shadow: none;
 }
 
 /* ── Fortune Content (below image) ── */
@@ -567,6 +533,7 @@ h1 {
 
 .fortune-content .stars {
   font-size: 1.2rem;
+  font-weight: 600;
   text-align: center;
   flex-shrink: 0;
   letter-spacing: 3px;
@@ -590,7 +557,7 @@ h1 {
   flex: 1;
   overflow: hidden;
   color: #6b3048;
-  font-weight: 300;
+  font-weight: 500;
   letter-spacing: 0.03em;
   -webkit-mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
@@ -632,7 +599,7 @@ h1 {
 .nav-btn {
   font-family: inherit;
   font-size: 0.87rem;
-  font-weight: 600;
+  font-weight: 700;
   padding: 6px 22px;
   border-radius: 50px;
   cursor: pointer;
@@ -693,14 +660,14 @@ h1 {
   .date { margin-top: 5px; font-size: 0.8rem; }
 
   /* ラベル */
-  .label { font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 0.08em; }
+  .label { font-size: 0.95rem; margin-bottom: 10px; letter-spacing: 0.08em; }
 
   /* PWAインストールバナーは常に非表示 */
   .install-banner { display: none !important; }
 
   /* 星座グリッド：3列、縦長カード */
-  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0; gap: 6px; }
-  .sign-btn-img-wrap { aspect-ratio: 3 / 4; border-radius: 12px; }
+  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0; gap: 6px; margin-bottom: 8px; }
+  .sign-btn-img-wrap { aspect-ratio: 4 / 5; border-radius: 12px; }
   .sign-btn { border-radius: 12px; }
   .sign-btn .btn-name { font-size: 16px; padding: 6px 4px 7px; }
   .btn-zodiac-icon { width: 17px; height: 17px; }
@@ -710,7 +677,7 @@ h1 {
   .fortune-page { padding-top: 0; }
   .fortune-img-area { padding: 6px 14px 0; }
   .fortune-page-heading { font-size: 1rem; padding: 8px 0 0; margin-bottom: 8px; }
-  .fortune-img-frame { aspect-ratio: 3 / 4; width: 90%; margin: 0 auto; max-height: 50vh; }
+  .fortune-img-frame { aspect-ratio: 3 / 4; width: 80%; margin: 0 auto; max-height: 50vh; }
   .fortune-title-below { padding: 6px 12px 0; }
   .fortune-title { font-size: 1rem; }
   .fortune-content { padding: 6px 20px 4px; gap: 6px; }

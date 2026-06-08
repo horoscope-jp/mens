@@ -20,9 +20,6 @@
 </head>
 <body>
 
-  <!-- 星空背景 -->
-  <div id="stars-bg"></div>
-
   <!-- 認証画面 -->
   <div id="auth-screen" class="auth-screen" hidden>
     <div class="auth-card">
@@ -221,18 +218,6 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('./service-worker.js');
     }
-    // 桜の花びら生成
-    (function() {
-      const bg = document.getElementById('stars-bg');
-      for (let i = 0; i < 28; i++) {
-        const b = document.createElement('span');
-        b.className = 'cherry-blossom';
-        const size = (Math.random() * 0.7 + 0.75).toFixed(2);
-        b.textContent = '🌸';
-        b.style.cssText = `font-size:${size}rem;left:${Math.random()*100}vw;top:${Math.random()*100}vh;animation-duration:${5+Math.random()*7}s;animation-delay:${Math.random()*6}s;`;
-        bg.appendChild(b);
-      }
-    })();
   </script>
 </body>
 </html>
