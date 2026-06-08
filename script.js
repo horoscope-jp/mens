@@ -662,3 +662,21 @@ document.getElementById('work-back').addEventListener('click', () => showPage('p
 document.getElementById('work-next').addEventListener('click', () => showPage('page-money'));
 document.getElementById('money-back').addEventListener('click', () => showPage('page-work'));
 document.getElementById('money-next').addEventListener('click', () => showPage('page-top'));
+
+// 桜アニメーション（PC表示のみ）
+(function initSakura() {
+  if (window.innerWidth < 768) return;
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    const petal = document.createElement('div');
+    petal.className = 'sakura-petal';
+    const size = 15 + Math.random() * 10;
+    petal.style.width = size + 'px';
+    petal.style.height = (size * 0.65) + 'px';
+    petal.style.left = (Math.random() * 100) + '%';
+    petal.style.top = '-30px';
+    petal.style.animationDuration = (8 + Math.random() * 7) + 's';
+    petal.style.animationDelay = (-Math.random() * 15) + 's';
+    document.body.appendChild(petal);
+  }
+})();
