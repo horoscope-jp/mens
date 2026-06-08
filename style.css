@@ -321,6 +321,8 @@ h1 {
 .step-body strong { color: var(--rose); }
 .step-sub { font-size: 0.74rem; color: var(--text-sub); }
 
+.deco-symbol { text-shadow: none; }
+
 /* ── Sign Selector Label ── */
 .label {
   font-size: 0.85rem;
