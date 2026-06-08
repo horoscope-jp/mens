@@ -682,43 +682,41 @@ h1 {
   padding: 0 20px 36px;
 }
 
-/* ── Responsive (スマホ最優先) ── */
+/* ── Responsive (iPhone 13 390×844px 基準) ── */
 @media (max-width: 430px) {
-  /* コンテナの上下余白を大幅圧縮 */
-  .container { padding: 10px 16px 30px; }
+  /* コンテナ */
+  .container { padding: 12px 16px 24px; }
 
-  /* ヘッダーを最小化 */
-  header { margin-bottom: 8px; padding-bottom: 8px; }
-  h1 { font-size: 1.1rem; letter-spacing: 0.06em; }
-  .date { margin-top: 3px; font-size: 0.7rem; }
+  /* ヘッダー */
+  header { margin-bottom: 12px; padding-bottom: 10px; }
+  h1 { font-size: 1.3rem; letter-spacing: 0.08em; }
+  .date { margin-top: 5px; font-size: 0.8rem; }
 
-  /* ラベルの余白を最小化 */
-  .label { font-size: 0.72rem; margin-bottom: 4px; letter-spacing: 0.06em; }
+  /* ラベル */
+  .label { font-size: 0.85rem; margin-bottom: 10px; letter-spacing: 0.08em; }
 
   /* PWAインストールバナーは常に非表示 */
   .install-banner { display: none !important; }
 
-  /* 星座グリッド：3列に変更。minmax(0,1fr)で画像の元サイズによる列拡張を防ぐ */
-  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0 4px; }
-
-  /* グリッドボタン画像：正方形クロップで縦を詰める */
-  .sign-btn-img-wrap { aspect-ratio: 1 / 1; border-radius: 10px; }
-  .sign-btn { border-radius: 10px; }
-  .sign-btn .btn-name { font-size: 14px; padding: 5px 3px 6px; }
-  .btn-zodiac-icon { width: 15px; height: 15px; }
-  .btn-zodiac-icon svg { width: 15px; height: 15px; }
+  /* 星座グリッド：3列、縦長カード */
+  .sign-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; padding: 0; gap: 6px; }
+  .sign-btn-img-wrap { aspect-ratio: 3 / 4; border-radius: 12px; }
+  .sign-btn { border-radius: 12px; }
+  .sign-btn .btn-name { font-size: 16px; padding: 6px 4px 7px; }
+  .btn-zodiac-icon { width: 17px; height: 17px; }
+  .btn-zodiac-icon svg { width: 17px; height: 17px; }
 
   /* 占い結果ページ */
   .fortune-page { padding-top: 0; }
-  .fortune-img-area { padding: 4px 10px 0; }
-  .fortune-page-heading { font-size: 0.95rem; padding: 6px 0 0; margin-bottom: 6px; }
-  .fortune-img-frame { aspect-ratio: 3 / 4; width: 85%; margin: 0 auto; max-height: 42vh; }
-  .fortune-title-below { padding: 5px 12px 0; }
-  .fortune-title { font-size: 0.95rem; }
-  .fortune-content { padding: 6px 16px 2px; gap: 4px; }
-  .fortune-content .stars { font-size: 1rem; letter-spacing: 2px; }
-  .fortune-content .fortune-text { font-size: 0.85rem; line-height: 1.6; max-height: 20vh; overflow: hidden; }
-  .fortune-nav { padding: 0 16px 14px; }
-  .nav-btn { padding: 8px 18px; font-size: 0.82rem; }
+  .fortune-img-area { padding: 6px 14px 0; }
+  .fortune-page-heading { font-size: 1rem; padding: 8px 0 0; margin-bottom: 8px; }
+  .fortune-img-frame { aspect-ratio: 3 / 4; width: 90%; margin: 0 auto; max-height: 50vh; }
+  .fortune-title-below { padding: 6px 12px 0; }
+  .fortune-title { font-size: 1rem; }
+  .fortune-content { padding: 6px 20px 4px; gap: 6px; }
+  .fortune-content .stars { font-size: 1.1rem; letter-spacing: 2px; }
+  .fortune-content .fortune-text { font-size: 0.9rem; line-height: 1.7; max-height: 25vh; overflow: hidden; }
+  .fortune-nav { padding: 0 20px 20px; }
+  .nav-btn { padding: 10px 22px; font-size: 0.87rem; }
   .sign-btn .char-icon { width: 44px; height: 50px; }
 }
