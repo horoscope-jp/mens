@@ -712,11 +712,12 @@ h1 {
   .fortune-page { padding-top: 0; }
   .fortune-img-area { padding: 4px 10px 0; }
   .fortune-page-heading { font-size: 0.95rem; padding: 6px 0 0; margin-bottom: 6px; }
-  .fortune-img-frame { height: 38vh; aspect-ratio: auto; }
+  .fortune-img-frame { aspect-ratio: 3 / 4; width: 85%; margin: 0 auto; max-height: 42vh; }
   .fortune-title-below { padding: 5px 12px 0; }
   .fortune-title { font-size: 0.95rem; }
   .fortune-content { padding: 6px 16px 2px; gap: 4px; }
   .fortune-content .stars { font-size: 1rem; letter-spacing: 2px; }
+  .fortune-content .fortune-text { font-size: 0.85rem; line-height: 1.6; max-height: 20vh; overflow: hidden; }
   .fortune-nav { padding: 0 16px 14px; }
   .nav-btn { padding: 8px 18px; font-size: 0.82rem; }
   .sign-btn .char-icon { width: 44px; height: 50px; }
