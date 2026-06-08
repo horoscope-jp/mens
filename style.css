@@ -748,16 +748,16 @@ html, body {
 
   @keyframes sakuraFall {
     0%   { transform: translateY(-30px) translateX(0) rotate(0deg);       opacity: 0; }
-    10%  { opacity: 0.65; }
+    10%  { opacity: 0.75; }
     50%  { transform: translateY(50vh)  translateX(50px) rotate(200deg); }
-    90%  { opacity: 0.45; }
+    90%  { opacity: 0.55; }
     100% { transform: translateY(110vh) translateX(-30px) rotate(400deg); opacity: 0; }
   }
 
   .sakura-petal {
     position: fixed;
     border-radius: 50% 0 50% 0;
-    background: rgba(255, 182, 193, 0.65);
+    background: rgba(255, 150, 170, 0.7);
     pointer-events: none;
     z-index: 0;
     animation: sakuraFall linear infinite;
