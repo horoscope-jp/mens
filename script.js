@@ -390,6 +390,15 @@ const PAGE_BEAUTY_IMG = {
 };
 
 // ── トップページ画像（重複なし12枚割り当て）──
+const FALLBACK_IMAGES = [
+  './images/fallback1.jpg',
+  './images/fallback2.jpg',
+  './images/fallback3.jpg',
+  './images/fallback4.jpg',
+  './images/fallback5.jpg'
+];
+let _fallbackIndex = 0;
+
 let _topPageImgEls = [];
 
 function assignTopPageImages() {
@@ -617,7 +626,8 @@ SIGNS.forEach((sign, i) => {
   img.alt = sign.name;
   img.onerror = function() {
     this.onerror = null;
-    this.src = './images/fallback1.jpg';
+    this.src = FALLBACK_IMAGES[_fallbackIndex % FALLBACK_IMAGES.length];
+    _fallbackIndex++;
     this.dataset.fallback = '1';
     console.log('Fallback applied for:', this.alt);
   };
