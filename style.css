@@ -708,10 +708,16 @@ h1 {
   .btn-zodiac-icon { width: 15px; height: 15px; }
   .btn-zodiac-icon svg { width: 15px; height: 15px; }
 
-  /* 占い結果ページ（変更最小限） */
-  .nav-btn { padding: 10px 18px; font-size: 0.82rem; }
-  .fortune-title { font-size: 1rem; }
-  .fortune-img-area { padding: 6px 10px 0; }
-  .sign-btn .char-icon { width: 44px; height: 50px; }
+  /* 占い結果ページ */
   .fortune-page { padding-top: 0; }
+  .fortune-img-area { padding: 4px 10px 0; }
+  .fortune-page-heading { font-size: 0.95rem; padding: 6px 0 0; margin-bottom: 6px; }
+  .fortune-img-frame { height: 38vh; aspect-ratio: auto; }
+  .fortune-title-below { padding: 5px 12px 0; }
+  .fortune-title { font-size: 0.95rem; }
+  .fortune-content { padding: 6px 16px 2px; gap: 4px; }
+  .fortune-content .stars { font-size: 1rem; letter-spacing: 2px; }
+  .fortune-nav { padding: 0 16px 14px; }
+  .nav-btn { padding: 8px 18px; font-size: 0.82rem; }
+  .sign-btn .char-icon { width: 44px; height: 50px; }
 }
