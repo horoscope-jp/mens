@@ -1,4 +1,4 @@
-const CACHE_NAME = 'horoscope-v2';
+const CACHE_NAME = 'horoscope-v3';
 
 // Network First で扱うコアファイル（更新が頻繁）
 const NETWORK_FIRST_ASSETS = [
