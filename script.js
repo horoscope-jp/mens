@@ -391,7 +391,6 @@ const PAGE_BEAUTY_IMG = {
 
 // ── トップページ画像（重複なし12枚割り当て）──
 let _topPageImgEls = [];
-const fallbackLocked = new Set();
 
 function assignTopPageImages() {
   const pool = [...TOP_PAGE_IMAGES];
@@ -400,7 +399,7 @@ function assignTopPageImages() {
     [pool[i], pool[j]] = [pool[j], pool[i]];
   }
   _topPageImgEls.forEach((el, i) => {
-    if (!fallbackLocked.has(i)) { el.src = pool[i % pool.length]; }
+    if (!el.dataset.fallback) { el.src = pool[i % pool.length]; }
   });
 }
 
@@ -617,20 +616,10 @@ SIGNS.forEach((sign, i) => {
   img.className = 'sign-btn-img';
   img.alt = sign.name;
   img.onerror = function() {
-    if (!this.dataset.retried) {
-      // 1回だけリトライ（キャッシュ回避）
-      this.dataset.retried = '1';
-      const src = this.src;
-      this.src = '';
-      setTimeout(() => { this.src = src + '?r=1'; }, 1500);
-    } else if (!this.dataset.fallback) {
-      // リトライ後も失敗: ローカルフォールバック画像に差し替え（上書き不可ロック）
-      this.dataset.fallback = '1';
-      this.onerror = null;
-      fallbackLocked.add(i);
-      console.log('Fallback locked for index:', i);
-      this.src = `./images/fallback${(i % 2) + 1}.jpg`;
-    }
+    this.onerror = null;
+    this.src = './images/fallback1.jpg';
+    this.dataset.fallback = '1';
+    console.log('Fallback applied for:', this.alt);
   };
   _topPageImgEls.push(img);
   const nameSpan = document.createElement('span');
