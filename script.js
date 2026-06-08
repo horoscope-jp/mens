@@ -666,14 +666,19 @@ document.getElementById('money-next').addEventListener('click', () => showPage('
 // 桜アニメーション（PC表示のみ）
 (function initSakura() {
   if (window.innerWidth < 768) return;
-  const count = 18;
-  for (let i = 0; i < count; i++) {
+  const total = 24;
+  const half = total / 2;
+  for (let i = 0; i < total; i++) {
     const petal = document.createElement('div');
     petal.className = 'sakura-petal';
-    const size = 15 + Math.random() * 10;
+    const size = 18 + Math.random() * 12;
     petal.style.width = size + 'px';
     petal.style.height = (size * 0.65) + 'px';
-    petal.style.left = (Math.random() * 100) + '%';
+    // 前半12個を左側（0〜45%）、後半12個を右側（55〜100%）に配置
+    const left = i < half
+      ? Math.random() * 45
+      : 55 + Math.random() * 45;
+    petal.style.left = left + '%';
     petal.style.top = '-30px';
     petal.style.animationDuration = (8 + Math.random() * 7) + 's';
     petal.style.animationDelay = (-Math.random() * 15) + 's';
