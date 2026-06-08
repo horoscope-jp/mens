@@ -714,3 +714,35 @@ html, body {
   padding: 0 8px !important;
   gap: 6px !important;
 }
+
+/* ── PC Layout (768px以上) ── */
+@media (min-width: 768px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%) !important;
+  }
+
+  .container {
+    max-width: 430px !important;
+    width: 100% !important;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffeef0 0%, #ffdde2 50%, #f9ccd5 100%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .sign-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    padding: 0 12px !important;
+    gap: 8px !important;
+  }
+
+  .install-banner {
+    display: none !important;
+  }
+}
