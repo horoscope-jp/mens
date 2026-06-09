@@ -47,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 24px;
+  padding-top: 30px;
   animation: fadeUp 0.5s ease;
 }
 
@@ -163,7 +163,7 @@ body {
   text-align: center;
 }
 
-.auth-bottom-pad { padding-bottom: 8px; }
+.auth-bottom-pad { padding-bottom: 4px; }
 
 /* ── Container ── */
 .container {
