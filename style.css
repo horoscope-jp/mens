@@ -82,6 +82,7 @@ body {
   aspect-ratio: 2 / 3;
   border-radius: 14px;
   overflow: hidden;
+  margin-top: 12px;
 }
 
 .auth-bg-img {
@@ -163,7 +164,7 @@ body {
   text-align: center;
 }
 
-.auth-bottom-pad { padding-bottom: 0; }
+.auth-bottom-pad { padding-bottom: 20px; }
 
 /* ── Container ── */
 .container {
