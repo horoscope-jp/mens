@@ -21,27 +21,33 @@
 <body>
 
   <!-- 認証画面 -->
-  <div id="auth-screen" class="auth-screen" hidden>
-    <div class="auth-card">
-      <h1 class="auth-title">✨ 今日の星座占い ✨</h1>
-      <p class="auth-subtitle">メールアドレスを入力してください</p>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-inner">
 
-      <div id="auth-form-area">
-        <div class="auth-input-wrap">
-          <input
-            type="email"
-            id="auth-email"
-            class="auth-input"
-            placeholder="example@email.com"
-            autocomplete="email"
-          />
-        </div>
-        <button id="auth-submit-btn" class="auth-submit-btn">
-          ✦ はじめる
-        </button>
-        <p id="auth-error" class="auth-error" hidden></p>
+      <div class="auth-title-area">
+        <h1 class="auth-title">✦ 美女の星占い ✦</h1>
+        <p class="auth-date" id="auth-date"></p>
       </div>
 
+      <div class="auth-img-wrap">
+        <img id="auth-bg-img" class="auth-bg-img" src="" alt="">
+        <div class="auth-overlay">
+          <p class="auth-overlay-label">メールアドレスを入力してください</p>
+          <div class="auth-input-wrap">
+            <input
+              type="email"
+              id="auth-email"
+              class="auth-input"
+              placeholder="example@email.com"
+              autocomplete="email"
+            />
+          </div>
+          <button id="auth-submit-btn" class="auth-submit-btn">✦ はじめる</button>
+          <p id="auth-error" class="auth-error" hidden></p>
+        </div>
+      </div>
+
+      <div class="auth-bottom-pad"></div>
     </div>
   </div>
 
