@@ -13,6 +13,34 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  // 日付表示
+  const authDateEl = document.getElementById('auth-date');
+  if (authDateEl) {
+    const now = new Date();
+    const wd = ['日','月','火','水','木','金','土'][now.getDay()];
+    authDateEl.textContent = `${now.getFullYear()}年${now.getMonth()+1}月${now.getDate()}日（${wd}）`;
+  }
+
+  // ランダム画像表示（script.js の TOP_PAGE_IMAGES / FALLBACK_IMAGES を使用）
+  const authImg = document.getElementById('auth-bg-img');
+  if (authImg) {
+    const pool = (typeof TOP_PAGE_IMAGES !== 'undefined' && TOP_PAGE_IMAGES.length)
+      ? TOP_PAGE_IMAGES
+      : (typeof BEAUTY_IMAGES !== 'undefined' && BEAUTY_IMAGES.length)
+        ? BEAUTY_IMAGES
+        : null;
+    if (pool) {
+      authImg.src = pool[Math.floor(Math.random() * pool.length)];
+      authImg.onerror = () => {
+        const fb = (typeof FALLBACK_IMAGES !== 'undefined' && FALLBACK_IMAGES.length)
+          ? FALLBACK_IMAGES[Math.floor(Math.random() * FALLBACK_IMAGES.length)]
+          : './images/fallback1.jpg';
+        authImg.onerror = null;
+        authImg.src = fb;
+      };
+    }
+  }
+
   function showApp() {
     authScreen.style.display = 'none';
     appContainer.style.display = '';
