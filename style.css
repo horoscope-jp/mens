@@ -32,7 +32,7 @@ body {
 .auth-screen {
   position: fixed;
   inset: 0;
-  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-btm) 100%);
+  background: #fce4ec;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -463,7 +463,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-start;
   overflow: hidden;
-  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-btm) 100%);
+  background: #fce4ec;
   padding-top: 0;
 }
 
@@ -785,16 +785,16 @@ html, body {
 
   @keyframes heartFloat {
     0%   { transform: translateY(0)       translateX(0px);  opacity: 0; }
-    20%  { transform: translateY(-20vh)   translateX(12px); opacity: 0.6; }
+    20%  { transform: translateY(-20vh)   translateX(12px); opacity: 0.8; }
     50%  { transform: translateY(-55vh)   translateX(-15px); }
-    80%  { transform: translateY(-85vh)   translateX(10px); opacity: 0.5; }
+    80%  { transform: translateY(-85vh)   translateX(10px); opacity: 0.8; }
     100% { transform: translateY(-120vh)  translateX(-8px); opacity: 0; }
   }
 
   .heart-float {
     position: fixed;
     bottom: -30px;
-    color: rgba(255, 150, 170, 0.5);
+    color: rgba(255, 100, 130, 0.7);
     pointer-events: none;
     z-index: 0;
     line-height: 1;
