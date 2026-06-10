@@ -668,7 +668,7 @@ document.getElementById('money-next').addEventListener('click', () => showPage('
 // ハートアニメーション（PC表示のみ）
 function initHearts() {
   if (window.innerWidth < 768) return;
-  const total = 24;
+  const total = 30;
   const half = total / 2;
   for (let i = 0; i < total; i++) {
     const heart = document.createElement('div');
@@ -680,8 +680,8 @@ function initHearts() {
       ? Math.random() * 45
       : 55 + Math.random() * 45;
     heart.style.left = left + '%';
-    heart.style.animationDuration = (9 + Math.random() * 8) + 's';
-    heart.style.animationDelay = (-Math.random() * 12) + 's';
+    heart.style.animationDuration = (15 + Math.random() * 7) + 's';
+    heart.style.animationDelay = (-Math.random() * 18) + 's';
     document.body.appendChild(heart);
   }
 }
