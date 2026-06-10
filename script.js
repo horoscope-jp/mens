@@ -682,7 +682,7 @@ document.getElementById('money-next').addEventListener('click', () => showPage('
       ? Math.random() * 45
       : 55 + Math.random() * 45;
     heart.style.left = left + '%';
-    heart.style.animationDuration = (8 + Math.random() * 7) + 's';
+    heart.style.animationDuration = (12 + Math.random() * 10) + 's';
     heart.style.animationDelay = (-Math.random() * 15) + 's';
     document.body.appendChild(heart);
   }
