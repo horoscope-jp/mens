@@ -428,7 +428,18 @@ function assignSessionImages() {
 function applySessionImage(pageId) {
   const imgId = PAGE_BEAUTY_IMG[pageId];
   const el = imgId && document.getElementById(imgId);
-  if (el && _sessionImages[pageId]) el.src = _sessionImages[pageId];
+  if (!el || !_sessionImages[pageId]) return;
+  el.onerror = function() {
+    this.onerror = null;
+    let idx;
+    do {
+      idx = Math.floor(Math.random() * FALLBACK_IMAGES.length);
+    } while (FALLBACK_IMAGES.length > 1 && idx === _lastFallbackIndex);
+    _lastFallbackIndex = idx;
+    this.src = FALLBACK_IMAGES[idx];
+    this.dataset.fallback = '1';
+  };
+  el.src = _sessionImages[pageId];
 }
 
 function seededRand(seed) {
