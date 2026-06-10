@@ -465,6 +465,7 @@ h1 {
   overflow: hidden;
   background: #fce4ec;
   padding-top: 0;
+  animation: none;
 }
 
 .fortune-page:not([hidden]) {
