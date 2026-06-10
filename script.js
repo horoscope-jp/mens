@@ -670,13 +670,13 @@ document.getElementById('money-next').addEventListener('click', () => showPage('
 // ハートアニメーション（PC表示のみ）
 (function initHearts() {
   if (window.innerWidth < 768) return;
-  const total = 20;
+  const total = 24;
   const half = total / 2;
   for (let i = 0; i < total; i++) {
     const heart = document.createElement('div');
     heart.className = 'heart-float';
     heart.textContent = '♡';
-    const size = 15 + Math.random() * 13;
+    const size = 20 + Math.random() * 15;
     heart.style.fontSize = size + 'px';
     const left = i < half
       ? Math.random() * 45
