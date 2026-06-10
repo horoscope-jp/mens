@@ -516,6 +516,16 @@ h1 {
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 12px;
+  opacity: 0;
+}
+
+@keyframes fortuneImgReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fortune-img-frame.is-visible {
+  animation: fortuneImgReveal 0.8s ease-out 0.5s both;
 }
 
 .lucky-overlay {
