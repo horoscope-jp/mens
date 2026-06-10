@@ -525,7 +525,7 @@ h1 {
 }
 
 .fortune-img-frame.is-visible {
-  animation: fortuneImgReveal 0.8s ease-out 1.3s both;
+  animation: fortuneImgReveal 0.8s ease-out 0.8s both;
 }
 
 .lucky-overlay {
@@ -808,8 +808,8 @@ html, body {
     bottom: -30px;
     color: rgba(184, 80, 112, 0.45);
     pointer-events: none;
-    z-index: 1;
+    z-index: 0;
     line-height: 1;
-    animation: heartFloat ease-in-out infinite;
+    animation: heartFloat linear infinite;
   }
 }
