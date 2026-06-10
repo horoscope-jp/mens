@@ -1,5 +1,5 @@
 const GAS_URL = 'https://script.google.com/macros/s/AKfycbwvsyWvAd35fG25nHbx4wp459pLwcOlKNVOJn3KFuC5X8m9Oys93w1mbsF0p742WeZw2w/exec';
-const LS_KEY = 'auth_email';
+const LS_KEY = 'auth_email_mens';
 
 document.addEventListener('DOMContentLoaded', () => {
   const authScreen   = document.getElementById('auth-screen');
