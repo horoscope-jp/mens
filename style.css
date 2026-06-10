@@ -23,7 +23,6 @@ html {
 body {
   font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
   background-color: #fce4ec !important;
-  background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg-mid) 50%, var(--bg-btm) 100%);
   min-height: 100vh;
   color: var(--text-main);
   overflow-x: hidden;
@@ -767,7 +766,7 @@ html, body {
     max-width: 430px !important;
     width: 100% !important;
     min-height: 100vh;
-    background: linear-gradient(180deg, #ffeef0 0%, #ffdde2 50%, #f9ccd5 100%);
+    background: #fce4ec;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
     border-radius: 0;
     padding-left: 16px !important;
@@ -784,20 +783,21 @@ html, body {
     display: none !important;
   }
 
-  @keyframes sakuraFall {
-    0%   { transform: translateY(-30px) translateX(0) rotate(0deg);       opacity: 0; }
-    10%  { opacity: 0.75; }
-    50%  { transform: translateY(50vh)  translateX(50px) rotate(200deg); }
-    90%  { opacity: 0.55; }
-    100% { transform: translateY(110vh) translateX(-30px) rotate(400deg); opacity: 0; }
+  @keyframes heartFloat {
+    0%   { transform: translateY(0)       translateX(0px);  opacity: 0; }
+    20%  { transform: translateY(-20vh)   translateX(12px); opacity: 0.6; }
+    50%  { transform: translateY(-55vh)   translateX(-15px); }
+    80%  { transform: translateY(-85vh)   translateX(10px); opacity: 0.5; }
+    100% { transform: translateY(-120vh)  translateX(-8px); opacity: 0; }
   }
 
-  .sakura-petal {
+  .heart-float {
     position: fixed;
-    border-radius: 50% 0 50% 0;
-    background: rgba(255, 150, 170, 0.7);
+    bottom: -30px;
+    color: rgba(255, 150, 170, 0.5);
     pointer-events: none;
     z-index: 0;
-    animation: sakuraFall linear infinite;
+    line-height: 1;
+    animation: heartFloat linear infinite;
   }
 }
