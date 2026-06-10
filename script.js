@@ -237,14 +237,10 @@ function animateFortunePage(pageId) {
   if (starsEl) starsEl.innerHTML = '';
   if (textEl)  textEl.textContent = '';
 
-  // 0. 画像フェードイン (0.2s)
-  addTimer(() => {
-    if (imgFrameEl) {
-      imgFrameEl.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-      imgFrameEl.style.opacity    = '1';
-      imgFrameEl.style.transform  = 'translateY(0)';
-    }
-  }, 200);
+  // 0. 画像フェードイン（CSSアニメーション: 0.5s delay）
+  if (imgFrameEl) {
+    requestAnimationFrame(() => imgFrameEl.classList.add('is-visible'));
+  }
 
   // 1. 運勢タイトル (1.2s)
   addTimer(() => {
@@ -481,8 +477,9 @@ function showPage(pageId) {
     const imgFrameEl = pageEl && pageEl.querySelector('.fortune-img-frame');
     if (imgFrameEl) {
       imgFrameEl.style.transition = '';
-      imgFrameEl.style.opacity    = '0';
-      imgFrameEl.style.transform  = 'translateY(12px)';
+      imgFrameEl.style.opacity    = '';
+      imgFrameEl.style.transform  = '';
+      imgFrameEl.classList.remove('is-visible');
     }
   }
   PAGES.forEach(id => {
