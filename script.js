@@ -397,7 +397,7 @@ const FALLBACK_IMAGES = [
   './images/fallback4.jpg',
   './images/fallback5.jpg'
 ];
-let _fallbackIndex = 0;
+let _lastFallbackIndex = -1;
 
 let _topPageImgEls = [];
 
@@ -626,8 +626,12 @@ SIGNS.forEach((sign, i) => {
   img.alt = sign.name;
   img.onerror = function() {
     this.onerror = null;
-    this.src = FALLBACK_IMAGES[_fallbackIndex % FALLBACK_IMAGES.length];
-    _fallbackIndex++;
+    let idx;
+    do {
+      idx = Math.floor(Math.random() * FALLBACK_IMAGES.length);
+    } while (FALLBACK_IMAGES.length > 1 && idx === _lastFallbackIndex);
+    _lastFallbackIndex = idx;
+    this.src = FALLBACK_IMAGES[idx];
     this.dataset.fallback = '1';
     console.log('Fallback applied for:', this.alt);
   };
@@ -663,25 +667,23 @@ document.getElementById('work-next').addEventListener('click', () => showPage('p
 document.getElementById('money-back').addEventListener('click', () => showPage('page-work'));
 document.getElementById('money-next').addEventListener('click', () => showPage('page-top'));
 
-// 桜アニメーション（PC表示のみ）
-(function initSakura() {
+// ハートアニメーション（PC表示のみ）
+(function initHearts() {
   if (window.innerWidth < 768) return;
-  const total = 24;
+  const total = 20;
   const half = total / 2;
   for (let i = 0; i < total; i++) {
-    const petal = document.createElement('div');
-    petal.className = 'sakura-petal';
-    const size = 18 + Math.random() * 12;
-    petal.style.width = size + 'px';
-    petal.style.height = (size * 0.65) + 'px';
-    // 前半12個を左側（0〜45%）、後半12個を右側（55〜100%）に配置
+    const heart = document.createElement('div');
+    heart.className = 'heart-float';
+    heart.textContent = '♡';
+    const size = 15 + Math.random() * 13;
+    heart.style.fontSize = size + 'px';
     const left = i < half
       ? Math.random() * 45
       : 55 + Math.random() * 45;
-    petal.style.left = left + '%';
-    petal.style.top = '-30px';
-    petal.style.animationDuration = (8 + Math.random() * 7) + 's';
-    petal.style.animationDelay = (-Math.random() * 15) + 's';
-    document.body.appendChild(petal);
+    heart.style.left = left + '%';
+    heart.style.animationDuration = (8 + Math.random() * 7) + 's';
+    heart.style.animationDelay = (-Math.random() * 15) + 's';
+    document.body.appendChild(heart);
   }
 })();
