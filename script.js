@@ -469,6 +469,7 @@ function showPage(pageId) {
   clearAllTimers();
   if (pageId === 'page-top') {
     assignTopPageImages();
+    ensurePaws();
   }
   if (FORTUNE_PAGE_IDS.has(pageId)) {
     // ページ表示前に src をセット＆imgFrame を非表示にリセット（フラッシュ防止）
@@ -665,7 +666,7 @@ document.getElementById('money-back').addEventListener('click', () => showPage('
 document.getElementById('money-next').addEventListener('click', () => showPage('page-top'));
 
 // ハートアニメーション（PC表示のみ）
-(function initHearts() {
+function initHearts() {
   if (window.innerWidth < 768) return;
   const total = 24;
   const half = total / 2;
@@ -673,14 +674,23 @@ document.getElementById('money-next').addEventListener('click', () => showPage('
     const heart = document.createElement('div');
     heart.className = 'heart-float';
     heart.textContent = '♡';
-    const size = 20 + Math.random() * 15;
+    const size = 18 + Math.random() * 14;
     heart.style.fontSize = size + 'px';
     const left = i < half
       ? Math.random() * 45
       : 55 + Math.random() * 45;
     heart.style.left = left + '%';
-    heart.style.animationDuration = (12 + Math.random() * 10) + 's';
-    heart.style.animationDelay = (-Math.random() * 15) + 's';
+    heart.style.animationDuration = (9 + Math.random() * 8) + 's';
+    heart.style.animationDelay = (-Math.random() * 12) + 's';
     document.body.appendChild(heart);
   }
-})();
+}
+
+function ensureHearts() {
+  if (window.innerWidth < 768) return;
+  if (document.querySelectorAll('.heart-float').length === 0) {
+    initHearts();
+  }
+}
+
+initHearts();
