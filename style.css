@@ -561,7 +561,7 @@ h1 {
 }
 
 .fortune-title-below {
-  padding: 10px 16px 0;
+  padding: 18px 16px 0;
   text-align: center;
 }
 
@@ -729,7 +729,7 @@ h1 {
   .fortune-img-area { padding: 6px 14px 0; }
   .fortune-page-heading { font-size: 1rem; padding: 8px 0 0; margin-bottom: 8px; }
   .fortune-img-frame { aspect-ratio: 3 / 4; width: 90%; margin: 0 auto; max-height: 50vh; }
-  .fortune-title-below { padding: 6px 12px 0; }
+  .fortune-title-below { padding: 14px 12px 0; }
   .fortune-title { font-size: 1rem; }
   .fortune-content { padding: 6px 20px 4px; gap: 6px; }
   .fortune-content .stars { font-size: 1.1rem; letter-spacing: 2px; }
